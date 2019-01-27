@@ -40,7 +40,8 @@ export default class Login extends Component {
                 mutation login(
                     $email: String!
                     $password: String!
-                ) {
+                )
+                {
                     login(
                         email: $email
                         password: $password
@@ -49,6 +50,7 @@ export default class Login extends Component {
                         token
                         user {
                             id
+                            balance
                         }
                     }
                 }`,
@@ -56,7 +58,9 @@ export default class Login extends Component {
         }).then(result => {
             let token = result.data.login.token;
             let decoded = jwtDecode(token);
-            store.dispatch({type: "SET_USER", payload: {token, id: decoded.userId}});
+            store.dispatch({type: "SET_USER", payload: {
+                token, id: decoded.userId, balance: result.data.login.user.balance
+            }});
             this.props.navigation.goBack(null);
         });
     }

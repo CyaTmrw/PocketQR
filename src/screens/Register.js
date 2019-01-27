@@ -56,6 +56,7 @@ export default class Register extends Component{
                         token
                         user {
                             id
+                            balance
                         }
                     }
                 }`,
@@ -63,7 +64,8 @@ export default class Register extends Component{
         }).then(result => {
             let token = result.data.signup.token;
             let decoded = jwtDecode(token);
-            store.dispatch({type: "SET_USER", payload: {token, id: decoded.userId}});
+            store.dispatch({type: "SET_USER", payload: {
+                token, id: decoded.userId, balance: result.data.signup.user.balance}});
             this.props.navigation.goBack(null);
         });
 	}

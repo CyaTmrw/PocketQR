@@ -25,14 +25,23 @@ class Home extends Component {
         } else {
             Account = (
                 <View>
-                    <View style={{padding: 20}}>
-                        <Button click={() => this.props.navigation.navigate("ScanScreen")} color="lightblue"
-                        text="Scan" height={60} fontSize={24} />
+                    <View>
+                        <Text style={{fontSize: 34}}>
+                            Balance: ${this.props.balance}
+                        </Text>
                     </View>
-                    <View style={{padding: 20}}>
-                        <Button click={() => this.logout()} color="lightblue"
-                        text="Log Out" height={60} fontSize={24} />
-                    </View>
+                    <View style={{padding: 10}}></View>
+                    <Button click={() => this.props.navigation.navigate("ScanScreen")} color="lightblue"
+                    text="Scan" height={60} fontSize={24} />
+                    <View style={{padding: 10}}></View>
+                    <Button click={() => this.props.navigation.navigate("DepositScreen")} color="lightblue"
+                    text="Deposit" height={60} fontSize={24} />
+                    <View style={{padding: 10}}></View>
+                    <Button click={() => this.props.navigation.navigate("WithdrawScreen")} color="lightblue"
+                    text="Withdraw" height={60} fontSize={24} />
+                    <View style={{padding: 10}}></View>
+                    <Button click={() => this.logout()} color="lightblue"
+                    text="Log Out" height={60} fontSize={24} />
                 </View>
             );
             Authentication = null;

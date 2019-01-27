@@ -6,6 +6,8 @@ import Payment from "../screens/Payment";
 import Scan from "../screens/Scan";
 import Register from "../screens/Register";
 import Login from "../screens/Login";
+import Deposit from "../screens/Deposit";
+import Withdraw from "../screens/Withdraw";
 
 const stackOptions = {
     initialRouteName: "HomeScreen"
@@ -39,6 +41,20 @@ const HomeStack = createStackNavigator({
         screen: Login,
         navigationOptions: ({navigation}) => ({
             title: "Login",
+            headerTitleStyle: {fontSize: 30}
+        })
+    },
+    DepositScreen: {
+        screen: Deposit,
+        navigationOptions: ({navigation}) => ({
+            title: "Deposit",
+            headerTitleStyle: {fontSize: 30}
+        })
+    },
+    WithdrawScreen: {
+        screen: Withdraw,
+        navigationOptions: ({navigation}) => ({
+            title: "Withdraw",
             headerTitleStyle: {fontSize: 30}
         })
     },
