@@ -45,12 +45,19 @@ export default class Scan extends Component {
                    }`,
                    variables: {paymentid, userid: store.getState().user.id}
                 }).then(result => {
-                    store.dispatch({type: "SET_USER", payload: {balance: result.data.transfer.balance}});
+                    let balance;
+                    if(result.data.transfer[0].id == store.getState().user.id) {
+                        balance = result.data.transfer[0].balance;
+                    } else if (result.data.transfer[1].id == store.getState().user.id) {
+                        balance = result.data.transfer[1].balance;
+                    }
+                    store.dispatch({type: "SET_USER", payload: {balance}});
+
                 });
             }
             else {
                 SendSMS.send({
-		            body: 'The default body of the SMS!',
+		            body: JSON.stringify({paymentid, userid: store.getState().user.id}),
 		            recipients: ['6474902879'],
 		            successTypes: ['sent', 'queued'],
 		            allowAndroidSendWithoutReadPermission: true

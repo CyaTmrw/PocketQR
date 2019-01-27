@@ -2,7 +2,7 @@ import ApolloClient from "apollo-boost";
 import store from "../redux/store";
 
 const client = new ApolloClient({
-    uri: "http://pocketqr.xyz",
+    uri: "https://pocketqr.xyz",
     request: (operation) => {
         let token = store.getState().user.token;
         if (token != null) {

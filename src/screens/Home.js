@@ -59,6 +59,20 @@ class Home extends Component {
         AsyncStorage.getItem("user", (err, result) => {
             if (result != null) store.dispatch({type: "SET_USER", payload: JSON.parse(result)});
         });
+        setInterval(() => {
+            if (store.getState().user.token != null) {
+                graphql.query({
+                    query: gql`
+                    query {
+                        me{
+                            balance
+                        }
+                    }`,
+                }).then(result => {
+                    store.dispatch({type: "SET_USER", payload: {balance: result.data.me.balance}});
+                });
+            }
+        }, 10000);
     }
     logout() {
         AsyncStorage.removeItem("user", (err) => {

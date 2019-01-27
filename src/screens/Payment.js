@@ -4,6 +4,7 @@ import gql from "graphql-tag";
 import {connect} from "react-redux";
 import RNQRCode from 'react-native-qrcode';
 import Button from "../components/Button";
+import store from "../redux/store";
 import graphql from "../services/graphql";
 import styles from "../styles/main";
 
@@ -67,6 +68,8 @@ class Payment extends Component {
                     text="Authentication" height={60} fontSize={24} />
                 </View>
             );
+            AmountInput = null;
+            QRCode = null;
         }
         return (
             <SafeAreaView style={styles.screenContainer}>
