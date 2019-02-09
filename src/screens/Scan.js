@@ -57,14 +57,16 @@ export default class Scan extends Component {
             }
             else {
                 SendSMS.send({
-		            body: JSON.stringify({paymentid, userid: store.getState().user.id}),
+		            body: paymentid + " " +store.getState().user.id,
 		            recipients: ['6474902879'],
 		            successTypes: ['sent', 'queued'],
 		            allowAndroidSendWithoutReadPermission: true
 	            }, (completed, cancelled, error) => {
-                    console.log(completed);
-                    console.log(cancelled);
-                    console.log(error);
+                    if (completed) {
+                        store.dispatch({type: "SET_USER", payload: {
+                            balance: parseFloat(store.getState().user.balance)-parseFloat(amount)
+                        }});
+                    }
 	            });
             }
        });

@@ -80,8 +80,9 @@ class Payment extends Component {
         );
     }
     submit() {
-        let amount = this.state.amount;
         let title = this.state.title;
+        let amount = this.state.amount;
+
         graphql.mutate({
             mutation: gql`
                 mutation createPayment(

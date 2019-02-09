@@ -6,6 +6,9 @@ const userReducer = function(state = {token: null}, action) {
         AsyncStorage.setItem("user", JSON.stringify(user));
         return user;
     }
+    if (action.type == "REMOVE_USER") {
+        return {token: null};
+    }
 
     return state;
 };
