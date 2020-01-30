@@ -10,11 +10,14 @@ Its true advantage lies in its ability to send data across SMS (encrypted) allow
 
 ## Demo
 
-Home Screen
-<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/751/104/datas/original.png" width="200"/>
+### Home Screen
 
-Money Transfer Screen
-<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/751/106/datas/original.png" width="200"/>
+<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/751/104/datas/original.png" width="400"/>
 
-QR Code Screen
-<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/751/103/datas/original.png" width="200"/>
+### Money Transfer Screen
+
+<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/751/106/datas/original.png" width="400"/>
+
+### QR Code Screen
+
+<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/751/103/datas/original.png" width="400"/>
