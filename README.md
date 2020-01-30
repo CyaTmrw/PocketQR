@@ -1,7 +1,9 @@
 # PocketQR
 
 ## About
-This is the repo is for mobile part of PocketQR for DeltaHacks V
+This is the repository for the mobile app part of PocketQR.
+
+The winner of "RBC - Made From Scratch" for DeltaHacks V
 
 Link to the devpost: https://devpost.com/software/pocketqr
 
