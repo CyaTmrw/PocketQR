@@ -15,7 +15,7 @@
     "openpgp": "^4.4.6",
     "react": "16.6.3",
     "react-apollo": "^2.4.0",
-    "react-native": "0.58.1",
+    "react-native": "0.70.4",
     "react-native-camera": "^1.9.2",
     "react-native-qrcode": "^0.2.7",
     "react-native-qrcode-scanner": "^1.1.2",
